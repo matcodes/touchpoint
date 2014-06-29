@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Touchpoint</title>
+  <meta name="viewport" content="width=device-width" />
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<%= render :partial => "shared/top_nav" %>
+  <div class="container">
+    <header>
+			<%= render :partial => "shared/info" %>
+    </header>
+    <div id="main" role="main">
+			<%= yield %>
+    </div>
+  </div> <!--! end of #container -->
+
+	<div id="bottom-stuff">
+		<div class="container">
+			<div class="row">
+				<div class="span8 columns">
+					<ul class="horizontal unstyled">
+						<li><%= link_to "About", "/about" %></li>
+						<li><%= link_to "Contact", "/contact" %></li>
+						<li><%= link_to "How It Works", "/howitworks" %></li>
+						<li><%= link_to "Terms of Use", "/terms" %></li>
+						<li><%= link_to "Blog", "#" %>
+					</ul>
+				</div>
+				<div class="span4 columns offset4">
+					<span>&copy; <%= Date.today.year %> Touchpoint</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

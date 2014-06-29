@@ -1,0 +1,19 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Base .btn styles
+
+.btnx {
+  &.product {
+      &.primary {
+        opacity:1;
+        font-weight: bold;
+        background-color: #414141;
+          background-image: -webkit-linear-gradient(top, #555, #222);
+          background-repeat: repeat-x;
+          border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+      }
+  }
+}

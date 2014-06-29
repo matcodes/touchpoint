@@ -1,0 +1,15 @@
+<p>Dear <%= @user.email %>,</p>
+
+<p>Following are the items for which you had requested for a Quotation...</p>
+
+<% @products.each do |p|  %>
+    <h2><%= CartMailer::PRODUCT_LABELS[p] %></h2>
+    <p></p><%= image_tag attachments["#{p}2.png"].url, :style => "width:195px;height:200px" %>
+<% end %>
+
+<p>Best Regards,<br/>
+  Sales Team.
+
+
+
+

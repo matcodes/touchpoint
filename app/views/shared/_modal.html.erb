@@ -1,0 +1,13 @@
+<div class="modal" style="display: none;">
+  <div class="modal-header">
+    <h3><%= title %></h3>
+    <a href="#" class="close">×</a>
+  </div>
+  <div class="modal-body">
+    <%= yield %>
+  </div>
+  <div class="modal-footer">
+    <%= link_to action_title, primary_path, :class => "btn primary", :method => :post %>
+    <%= link_to "Cancel", "#", :class => "btn close" %>
+  </div>
+</div>

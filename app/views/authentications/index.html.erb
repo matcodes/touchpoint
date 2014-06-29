@@ -1,0 +1,27 @@
+<% if @authentications %>
+  <% unless @authentications.empty? %>
+    <p><strong>You have the following linked:</strong></p>
+    <div class="authentications">
+      <% for authentication in @authentications %>
+        <div class="authentication">
+          <%= image_tag "#{authentication.provider}_32.png", :size => "32x32" %>
+          <div class="provider"><%= authentication.provider.titleize %></div>
+          <div class="uid"><%= authentication.uid %></div>
+          <%= link_to "X", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove" %>
+        </div>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+<% else %>
+  <p><strong>Link your Facebook account:</strong></p>
+<% end %>
+
+<% unless current_user.has_linked_facebook? %>
+	<%= link_to user_omniauth_authorize_path(:facebook), :class => "auth_provider provider-login" do %>
+	  <%= image_tag "facebook_64.png", :size => "64x64", :alt => "Facebook" %>
+		Facebook
+	<% end %>
+<% end %>
+
+<div class="clear"></div>

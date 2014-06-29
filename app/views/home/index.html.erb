@@ -1,0 +1,1058 @@
+<style>
+    #product {
+        display:none;
+        position:absolute;
+        right:10px;
+        top:20px;
+        z-index:1000;
+        /* border: 1px solid #90ee90;
+        padding: 3px;                 */
+    }
+
+    #wrap_product {
+
+        width:195px;
+        height:220px;
+        background-color: #EEE;
+        border-radius:10px;
+        opacity:.6;
+    }
+
+    #image_holder {
+        background-repeat: no-repeat;
+        min-height: 90%;
+
+    }
+
+    #product img {
+        margin-top:5px;
+    }
+    #product .btn {
+        height:18px;
+        width:60px;
+        font-size:9px;
+        padding:2px;
+    }
+
+    #product .btn:nth-of-type(1) {
+        margin-left:5px;
+    }
+    .cart {
+        height: 380px;
+        overflow: scroll;
+        display:block;
+        /*position:absolute; */
+        /* width:300px; */
+        /* right:10px; */
+        /* top:100px; */
+    }
+    .cart img {
+        width:280px;
+        height: 400px;
+    }
+    #position {
+        left: 10px;
+        top: 600px;
+        width:auto;
+    }
+
+    #currenttime {
+        left: 10px;
+        top: 700px;
+    }
+    .videotip {
+        z-index:999;
+        display:none;
+        position:absolute;
+        border: 1px dashed yellow;
+        width:auto;
+        height:auto;
+    }
+    .videotip[name="trouser"] {
+        border:none;
+    }
+    .videotip[name="trouser"] .legend {
+        display:none;
+    }
+
+    .videotip[name="wine"] {
+        border:none;
+    }
+    .videotip[name="wine"] .legend {
+        display:none;
+    }
+
+    .videotip[name="ipad"] {
+        border:none;
+    }
+    .videotip[name="ipad"] .legend {
+        display:none;
+    }
+    
+    
+    .videotip[name="glass"] {
+        border:none;
+    }
+    .videotip[name="glass"] .legend {
+        display:none;
+    }
+    
+    .selectable {
+        border: none;
+        display:block;
+    }
+    #videowrap { position:relative; width:640px; height:380px;}
+    .legend {background: rgba(200,200,200,0.5);
+        color: black; font:"trebuchet ms",sans-serif;
+        font-size: 10px;
+        width:auto;
+        -moz-box-shadow: 2px 2px 2px rgba(50,50,50,0.4);
+        -webkit-box-shadow: 2px 2px 2px rgba(50,50,50,0.4);
+        -box-shadow: 2px 2px 2px rgba(50,50,50,0.4);
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        padding:4px;
+        padding-bottom:9px;
+        display:block;
+        height:10px;
+        text-align:center;
+    }
+
+    #trouser17 {left:446px; top:52px;}
+    #trouser17 .selectable { width:157px; height:172px;}
+
+    #trouser18 {left:421px; top:27px;}
+    #trouser18 .selectable { width:190px; height:172px;}
+
+    #trouser19 {left:406px; top:10px;}
+    #trouser19 .selectable { width:228px; height:175px;}
+
+
+    #trouser1 {left:391px; top:30px;}
+    #trouser1 .selectable { width:249px; height:166px;}
+    #trouser2 {left:389px; top:18px;}
+    #trouser2 .selectable { width:251px; height:175px;}
+
+    #trouser3 {left:388px; top:13px;}
+    #trouser3 .selectable { width:252px; height:176px;}
+    #trouser4 {left:388px; top:10px;}
+    #trouser4 .selectable { width:222px; height:173px;}
+    #trouser5 {left:395px; top:10px;}
+    #trouser5 .selectable { width:215px; height:158px;}
+
+    #trouser6 {left:19px; top:217px;}
+    #trouser6 .selectable { width:140px; height:122px;}
+
+    #trouser15 {left:42px; top:161px;}
+    #trouser15 .selectable { width:165px; height:154px;}
+
+    #trouser7 {left:100px; top:100px;}
+    #trouser7 .selectable { width:148px; height:166px;}
+
+
+    #trouser8 {left:113px; top:111px;}
+    #trouser8 .selectable { width:148px; height:166px;}
+
+    #trouser9 {left:137px; top:124px;}
+    #trouser9 .selectable { width:156px; height:131px;}
+
+    #trouser10 {left:167px; top:112px;}
+    #trouser10 .selectable { width:145px; height:123px;}
+
+    #trouser11 {left:201px; top:107px;}
+    #trouser11 .selectable { width:145px; height:123px;}
+
+    #trouser12 {left:223px; top:103px;}
+    #trouser12 .selectable { width:167px; height:140px;}
+
+    #trouser13 {left:258px; top:104px;}
+    #trouser13 .selectable { width:167px; height:140px;}
+
+    #trouser14 {left:283px; top:104px;}
+    #trouser14 .selectable { width:167px; height:140px;}
+
+
+    #glass1 {left:272px; top:187px;}
+    #glass1 .selectable {width:159px; height:67px;}
+
+    #glass2 {left:270px; top:173px;}
+    #glass2 .selectable {width:159px; height:67px;}
+
+    #glass3 {left:266px; top:157px;}
+    #glass3 .selectable {width:159px; height:67px;}
+
+    #glass4 {left:266px; top:139px;}
+    #glass4 .selectable {width:159px; height:67px;}
+
+    #glass5 {left:269px; top:126px;}
+    #glass5 .selectable {width:159px; height:67px;}
+
+    #glass6 {left:268px; top:110px;}
+    #glass6 .selectable {width:159px; height:67px;}
+
+    #glass7 {left:263px; top:93px;}
+    #glass7 .selectable {width:159px; height:67px;}
+
+    #glass8 {left:261px; top:80px;}
+    #glass8 .selectable {width:159px; height:67px;}
+
+    #glass9 {left:252px; top:68px;}
+    #glass9 .selectable {width:159px; height:67px;}
+
+    #glass10 {left:242px; top:56px;}
+    #glass10 .selectable {width:159px; height:67px;}
+
+    #glass11 {left:233px; top:69px;}
+    #glass11 .selectable {width:159px; height:67px;}
+
+    #glass12 {left:229px; top:81px;}
+    #glass12 .selectable {width:159px; height:67px;}
+
+    #glass13 {left:229px; top:92px;}
+    #glass13 .selectable {width:159px; height:67px;}
+
+    #glass14 {left:226px; top:104px;}
+    #glass14 .selectable {width:159px; height:67px;}
+
+    #glass15 {left:224px; top:111px;}
+    #glass15 .selectable {width:159px; height:67px;}
+
+    #glass16 {left:220px; top:123px;}
+    #glass16 .selectable {width:159px; height:67px;}
+
+    #wine1 {left:27px; top:13px;}
+    #wine1 .selectable {width:428px; height:187px;}
+
+    #wine2 {left:17px; top:27px;}
+    #wine2 .selectable {width:428px; height:187px;}
+
+    #wine3 {left:13px; top:34px;}
+    #wine3 .selectable {width:422px; height:181px;}
+
+    #ipad1 {left:408px; top:28px;}
+    #ipad1 .selectable { width:232px; height:291px;}
+    #ipad2 {left:394px; top:28px;}
+    #ipad2 .selectable { width:246px; height:291px;}
+    #ipad3 {left:379px; top:26px;}
+    #ipad3 .selectable { width:249px; height:293px;}
+    #ipad4 {left:359px; top:24px;}
+    #ipad4 .selectable { width:252px; height:295px;}
+    #ipad5 {left:344px; top:21px;}
+    #ipad5 .selectable { width:252px; height:295px;}
+    #ipad6 {left:326px; top:23px;}
+    #ipad6 .selectable { width:252px; height:295px;}
+    #ipad7 {left:312px; top:19px;}
+    #ipad7 .selectable { width:252px; height:295px;}
+    #ipad8 {left:299px; top:20px;}
+    #ipad8 .selectable {width:252px; height:295px;}
+    #ipad9 {left:281px; top:19px;}
+    #ipad9 .selectable {width:252px; height:295px;}
+    #ipad10 {left:268px; top:19px;}
+    #ipad10 .selectable {width:252px; height:295px;}
+    #ipad11 {left:250px; top:19px;}
+    #ipad11 .selectable {width:252px; height:295px;}
+    #ipad12 {left:236px; top:19px;}
+    #ipad12 .selectable {width:252px; height:295px;}
+    #ipad13 {left:224px; top:19px;}
+    #ipad13 .selectable {width:252px; height:295px;}
+    #ipad14 {left:206px; top:19px;}
+    #ipad14 .selectable {width:252px; height:295px;}
+    #ipad15 {left:193px; top:19px;}
+    #ipad15 .selectable {width:252px; height:295px;}
+    #ipad16 {left:176px; top:19px;}
+    #ipad16 .selectable {width:252px; height:295px;}
+    #ipad17 {left:163px; top:18px;}
+    #ipad17 .selectable {width:252px; height:295px;}
+    #ipad18 {left:149px; top:21px;}
+    #ipad18 .selectable {width:252px; height:295px;}
+    #ipad19 {left:134px; top:21px;}
+    #ipad19 .selectable {width:252px; height:295px;}
+    #ipad20 {left:122px; top:21px;}
+    #ipad20 .selectable {width:252px; height:295px;}
+    #ipad21 {left:102px; top:20px;}
+    #ipad21 .selectable {width:252px; height:295px;}
+    #ipad22 {left:92px; top:21px;}
+    #ipad22 .selectable {width:252px; height:295px;}
+    #ipad23 {left:80px; top:22px;}
+    #ipad23 .selectable {width:252px; height:295px;}
+    #ipad24 {left:62px; top:22px;}
+    #ipad24 .selectable {width:252px; height:295px;}
+    #ipad25 {left:49px; top:22px;}
+    #ipad25 .selectable {width:252px; height:295px;}
+    #ipad26 {left:33px; top:17px;}
+    #ipad26 .selectable {width:252px; height:295px;}
+    #ipad27 {left:19px; top:16px;}
+    #ipad27 .selectable {width:252px; height:295px;}
+    #ipad28 {left:160px; top:69px;}
+    #ipad28 .selectable {width:100px; height:120px;}
+    #ipad29 {left:153px; top:69px;}
+    #ipad29 .selectable {width:100px; height:120px;}
+    #ipad30 {left:146px; top:69px;}
+    #ipad30 .selectable {width:100px; height:120px;}
+    #ipad31 {left:133px; top:69px;}
+    #ipad31 .selectable {width:100px; height:120px;}
+    #ipad32 {left:124px; top:68px;}
+    #ipad32 .selectable {width:100px; height:120px;}
+    #ipad33 {left:116px; top:68px;}
+    #ipad33 .selectable {width:100px; height:120px;}
+    #ipad34 {left:107px; top:68px;}
+    #ipad34 .selectable {width:100px; height:120px;}
+    #ipad35 {left:107px; top:68px;}
+    #ipad35 .selectable {width:100px; height:120px;}
+    #ipad36 {left:107px; top:68px;}
+    #ipad36 .selectable {width:100px; height:120px;}
+    #ipad37 {left:81px; top:71px;}
+    #ipad37 .selectable {width:100px; height:120px;}
+    #ipad38 {left:71px; top:71px;}
+    #ipad38 .selectable {width:100px; height:120px;}
+    #ipad39 {left:58px; top:72px;}
+    #ipad39 .selectable {width:100px; height:120px;}
+    #ipad40 {left:46px; top:72px;}
+    #ipad40 .selectable {width:100px; height:120px;}
+    #ipad41 {left:39px; top:72px;}
+    #ipad41 .selectable {width:100px; height:120px;}
+    #ipad42 {left:28px; top:72px;}
+    #ipad42 .selectable {width:100px; height:120px;}
+    #ipad43 {left:17px; top:69px;}
+    #ipad43 .selectable {width:100px; height:120px;}
+    #ipad44 {left:8px; top:69px;}
+    #ipad44 .selectable {width:100px; height:120px;}
+    #ipad45 {left:0px; top:70px;}
+    #ipad45 .selectable {width:100px; height:120px;}
+    #ipad46 {left:0px; top:70px;}
+    #ipad46 .selectable {width:84px; height:120px;}
+    #ipad47 {left:0px; top:70px;}
+    #ipad47 .selectable {width:72px; height:120px;}
+    #ipad48 {left:466px; top:56px;}
+    #ipad48 .selectable {width:111px; height:107px;}
+    #ipad49 {left:531px; top:32px;}
+    #ipad49 .selectable {width:109px; height:299px;}
+    #ipad50 {left:467px; top:32px;}
+    #ipad50 .selectable {width:173px; height:299px;}
+    #ipad51 {left:400px; top:32px;}
+    #ipad51 .selectable {width:240px; height:299px;}
+    #ipad52 {left:342px; top:40px;}
+    #ipad52 .selectable {width:289px; height:307px;}
+    #ipad53 {left:281px; top:34px;}
+    #ipad53 .selectable {width:293px; height:307px;}
+    #ipad54 {left:215px; top:35px;}
+    #ipad54 .selectable {width:293px; height:307px;}
+    #ipad55 {left:149px; top:35px;}
+    #ipad55 .selectable {width:293px; height:307px;}
+    #ipad56 {left:82px; top:33px;}
+    #ipad56 .selectable {width:300px; height:307px;}
+    #ipad57 {left:31px; top:33px;}
+    #ipad57 .selectable {width:300px; height:307px;}
+    #ipad58 {left:0px; top:34px;}
+    #ipad58 .selectable {width:286px; height:307px;}
+
+
+    .btn.product.primary {
+        opacity:1;
+        font-weight: bold;
+        background-color: #414141;
+        background-image: -webkit-linear-gradient(top, #555, #222);
+        background-repeat: repeat-x;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    }
+
+</style>
+
+<style>
+
+.ipad {
+    background-image: url(<%= asset_path('ipad2.png') %>);
+    -webkit-background-size:195px 200px;
+}
+
+.trouser {
+    background-image: url(<%= asset_path('trouser2.png') %>);
+    -webkit-background-size:195px 200px;
+}
+
+.wine {
+    background-image: url(<%= asset_path('wine2.png') %>);
+    -webkit-background-size:195px 200px;
+}
+
+.glass {
+    background-image: url(<%= asset_path('glass2.png') %>);
+    -webkit-background-size:195px 200px;
+}
+
+</style>
+
+<% if params[:no_hires]  %>
+<style>
+
+  #play {
+      color: yellow;
+      font-size: 250%;
+  }
+    </style>
+<% else %>
+    <style>
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+
+        .ipad {
+            background-image: url(<%= asset_path('ipad2-retina.png') %>);
+        }
+
+        .trouser {
+            background-image: url(<%= asset_path('trouser2-retina.png') %>) ;
+        }
+
+        .wine {
+            background-image: url(<%= asset_path('wine2-retina.png') %>) ;
+        }
+
+        .glass {
+            background-image: url(<%= asset_path('glass2-retina.png') %>);
+        }
+
+    }
+</style>
+<% end %>
+
+<script>
+    var cartItems = [];
+    function printPosition(i,selection) {
+        $("#position").html("left:" + selection.x1 + "px; top:" + selection.y1 +  "px;<br> width:" + selection.width + "px; height:" + selection.height + "px;");
+    }
+    $(document).ready(function () {
+        $('video').imgAreaSelect({
+            handles: true,
+            onSelectChange: printPosition
+        });
+        $('video').removeAttr('controls');
+
+        $("#forward").click(function() {
+            $("video").attr("currentTime", $("video").attr("currentTime") + 0.1);
+        });
+
+        $("#backward").click(function() {
+            $("video").attr("currentTime", $("video").attr("currentTime") - 0.1);
+        });
+
+        $("#play").click(function() {
+            document.getElementById('video').play();
+        });
+
+        $("#pause").click(function() {
+            document.getElementById('video').pause();
+        });
+
+        $("#stop").click(function() {
+            document.getElementById('video').pause();
+            $("video").attr("currentTime", 0);
+        });
+
+        $("#email").click(function() {
+            $.get("/send_quotation?products=" + cartItems.join());
+            alert("Quotation emailed successfully!");
+        });
+        
+        $("#post_to_wall").click(function() {
+             FB.api('/me', function(response) {
+                alert('Message posted to your wall, ' + response.name + '.');
+
+                var link = 'http://touchpoint.dyndns.biz';
+                var body = 'Added ' + cartItems.join() + ' to my Shopping Cart via Touchpoint technology. Check it out yourself.';
+                var name = 'Touchpoint';
+                FB.api('/me/feed', 'post', { name: name, message: body, link: link }, function(response) {
+                  if (!response || response.error) {
+                    alert('Error occured');
+                  } else {
+                    //alert('Post ID: ' + response.id);
+                  }
+                });             
+             });            
+        });        
+
+        $("#clear_cart").click(function() {
+            cartItems = [];
+            $(".cart").html("");
+        });
+
+        $("video").bind("timeupdate", function(event) {
+            $("#currenttime").html($(this).attr("currentTime"));
+        });
+
+        $("body").mousemove(function(event) {
+            $("#positionx").html("" + event.pageX + "," + event.pageY);
+        });
+
+        $(".videotip").click(function() {
+            var product = $(this).attr('name');
+            if (cartItems.indexOf(product) >= 0) {
+                //alert("Product already added to cart!");
+            } else {
+                cartItems.push(product);
+                $(".cart").prepend($("<img src=/assets/" + $(this).attr('name') + "2.png />"));
+                $("#product").fadeOut(function() {
+                    $("#image_holder").attr("class",  product);
+                    $("#product").fadeIn();
+                });
+            }
+        });
+
+        function send_email(product) {
+            $.get("/send_quotation?products=" + product);
+        }
+
+        function post_to_fb(product) {
+            FB.api('/me', function(response) {
+                alert('Message posted to your wall, ' + response.name + '.');
+
+                var link = 'http://touchpoint.dyndns.biz';
+                var body = 'Added ' + product + ' to my Shopping Cart via Touchpoint technology. Check it out yourself.';
+                var name = 'Touchpoint';
+                FB.api('/me/feed', 'post', { name: name, message: body, link: link }, function(response) {
+                    if (!response || response.error) {
+                        alert('Error occured');
+                    } else {
+                        //alert('Post ID: ' + response.id);
+                    }
+                });
+            });
+        }
+
+        $("#add_to_cart").click(function() {
+            var product = cartItems[cartItems.length - 1];
+            send_email(product);
+            post_to_fb(product);
+            $("#product").fadeOut();
+            cartItems.length = 0;
+        });
+
+        $("#purchase").click(function() {
+            var product = cartItems[cartItems.length - 1];
+            send_email(product);
+            post_to_fb(product);
+            $("#product").fadeOut();
+            cartItems.length = 0;
+        });
+
+        $("#close").click(function(){
+            $("#product").fadeOut();
+            cartItems.length = 0;
+        });
+
+        $(function(){
+            $('#videowrap div.videotip').each(function(){
+                jQuery('video').singalong({
+                    start : $(this).attr('data-start'),
+                    stop  : $(this).attr('data-stop'),
+                    elem  : $(this)
+                });
+            });
+        })
+    });
+</script>
+  
+<%= fb_connect_async_js %>
+
+<section id="introductions">
+
+    <div class="row">
+        <div class="span11 ">
+          <div id="videowrap">
+            <div id="product">
+              <div id="wrap_product">
+                <div id="image_holder">
+                </div>
+                <div id="wrap_buttons">
+                  <input type=button class="btn product primary" id=purchase value="Purchase"></input>
+                  <input type=button class="btn product primary" id=add_to_cart value="Add to Cart"></input>
+                  <input type=button class="btn product primary" id=close value="Close"></input>
+                </div>
+
+              </div>
+
+            </div>
+            <video id=video autoplay=true width="640" height="360">
+              <source src="/assets/touchpoint.mp4" type="video/mp4" />
+            </video>
+
+
+            <div class="videotip" id=trouser1 name=trouser data-start="6.1" data-stop="6.2">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+            <div class="videotip" id=trouser2 name=trouser data-start="6.2" data-stop="6.3">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+            <div class="videotip" id=trouser3 name=trouser data-start="6.3" data-stop="6.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+            <div class="videotip" id=trouser4 name=trouser data-start="6.4" data-stop="6.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+            <div class="videotip" id=trouser5 name=trouser data-start="6.5" data-stop="6.6">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+            <div class="videotip" id=trouser6 name=trouser data-start="7.3" data-stop="7.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+            <div class="videotip" id=trouser15 name=trouser data-start="7.4" data-stop="7.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+
+            <div class="videotip" id=trouser7 name=trouser data-start="7.5" data-stop="7.9">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+            <div class="videotip" id=trouser8 name=trouser data-start="7.9" data-stop="8.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+            <div class="videotip" id=trouser9 name=trouser data-start="8.3" data-stop="9.1">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+            <div class="videotip" id=trouser10 name=trouser data-start="9.1" data-stop="9.6">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+            <div class="videotip" id=trouser11 name=trouser data-start="9.6" data-stop="10.2">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+
+            <div class="videotip" id=trouser12 name=trouser data-start="10.2" data-stop="11.1">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+            <div class="videotip" id=trouser13 name=trouser data-start="11.1" data-stop="12.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+            <div class="videotip" id=trouser14 name=trouser data-start="12.0" data-stop="12.9">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+
+            <div class="videotip" id=trouser17 name=trouser data-start="4.5" data-stop="5.3">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+            <div class="videotip" id=trouser18 name=trouser data-start="5.3" data-stop="5.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+            <div class="videotip" id=trouser19 name=trouser data-start="5.5" data-stop="6.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+
+            <div class="videotip" id="glass1" name="glass" data-start="14.4" data-stop="14.6">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass2" name="glass" data-start="14.6" data-stop="14.9">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass3" name="glass" data-start="14.9" data-stop="15.2">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass4" name="glass" data-start="15.2" data-stop="15.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass5" name="glass" data-start="15.4" data-stop="15.7">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass6" name="glass" data-start="15.7" data-stop="16.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass7" name="glass" data-start="16.0" data-stop="16.3">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass8" name="glass" data-start="16.3" data-stop="16.7">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass9" name="glass" data-start="16.7" data-stop="17.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass10" name="glass" data-start="17.4" data-stop="18.2">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass11" name="glass" data-start="18.2" data-stop="18.9">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass12" name="glass" data-start="18.9" data-stop="19.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass13" name="glass" data-start="19.4" data-stop="19.8">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass14" name="glass" data-start="19.8" data-stop="20.2">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass15" name="glass" data-start="20.2" data-stop="20.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+            <div class="videotip" id="glass16" name="glass" data-start="20.5" data-stop="21.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>LV Sunglasses</span></div>
+            </div>
+
+            <div class="videotip" id="wine1" name="wine" data-start="23.2" data-stop="27.1">
+              <div class=selectable ></div>
+              <div class="legend"><span>Dom Perignon Champagne</span></div>
+            </div>
+            <div class="videotip" id="wine2" name="wine" data-start="27.1" data-stop="29.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Dom Perignon Champagne</span></div>
+            </div>
+            <div class="videotip" id="wine3" name="wine" data-start="29.0" data-stop="30.3">
+              <div class=selectable ></div>
+              <div class="legend"><span>Dom Perignon Champagne</span></div>
+            </div>
+
+            <div class="videotip" id=ipad1 name=ipad data-start="31.2" data-stop="32.3">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad2 name=ipad data-start="32.3" data-stop="32.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+
+            <div class="videotip" id=ipad3 name=ipad data-start="32.4" data-stop="32.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+
+            <div class="videotip" id=ipad4 name=ipad data-start="32.5" data-stop="32.6">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+
+            <div class="videotip" id=ipad5 name=ipad data-start="32.6" data-stop="32.7">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+
+            <div class="videotip" id=ipad6 name=ipad data-start="32.7" data-stop="32.8">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad7 name=ipad data-start="32.8" data-stop="32.9">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+
+            <div class="videotip" id=ipad8 name=ipad data-start="32.9" data-stop="33.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad9 name=ipad data-start="33.0" data-stop="33.1">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel  Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad10 name=ipad data-start="33.1" data-stop="33.2">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel  Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad11 name=ipad data-start="33.2" data-stop="33.3">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad12 name=ipad data-start="33.3" data-stop="33.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Shorts</span></div>
+            </div>
+
+            <div class="videotip" id=ipad13 name=ipad data-start="33.4" data-stop="33.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad14 name=ipad data-start="33.5" data-stop="33.6">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad15 name=ipad data-start="33.6" data-stop="33.7">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad16 name=ipad data-start="33.7" data-stop="33.8">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad17 name=ipad data-start="33.8" data-stop="33.9">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad18 name=ipad data-start="33.9" data-stop="34.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad19 name=ipad data-start="34.0" data-stop="34.1">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad20 name=ipad data-start="34.1" data-stop="34.2">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad21 name=ipad data-start="34.2" data-stop="34.3">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad22 name=ipad data-start="34.3" data-stop="34.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad23 name=ipad data-start="34.4" data-stop="34.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad24 name=ipad data-start="34.5" data-stop="34.6">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad25 name=ipad data-start="34.6" data-stop="34.7">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad26 name=ipad data-start="34.7" data-stop="34.8">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad27 name=ipad data-start="34.8" data-stop="34.9">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad28 name=ipad data-start="34.9" data-stop="35.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad29 name=ipad data-start="35.0" data-stop="35.1">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad30 name=ipad data-start="35.1" data-stop="35.2">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad31 name=ipad data-start="35.2" data-stop="35.3">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad32 name=ipad data-start="35.3" data-stop="35.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad33 name=ipad data-start="35.4" data-stop="35.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad34 name=ipad data-start="35.5" data-stop="35.6">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad35 name=ipad data-start="35.6" data-stop="35.7">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad36 name=ipad data-start="35.7" data-stop="35.8">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad37 name=ipad data-start="35.8" data-stop="35.9">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad38 name=ipad data-start="35.9" data-stop="36.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad39 name=ipad data-start="36.0" data-stop="36.1">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad40 name=ipad data-start="36.1" data-stop="36.2">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad41 name=ipad data-start="36.2" data-stop="36.3">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad42 name=ipad data-start="36.3" data-stop="36.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad43 name=ipad data-start="36.4" data-stop="36.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad44 name=ipad data-start="36.5" data-stop="36.6">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad45 name=ipad data-start="36.6" data-stop="36.7">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad46 name=ipad data-start="36.7" data-stop="36.8">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad47 name=ipad data-start="36.8" data-stop="37.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad48 name=ipad data-start="37.4" data-stop="38.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad49 name=ipad data-start="38.0" data-stop="38.6">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad50 name=ipad data-start="38.6" data-stop="39.1">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad51 name=ipad data-start="39.1" data-stop="39.6">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+            <div class="videotip" id=ipad52 name=ipad data-start="39.6" data-stop="40.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad53 name=ipad data-start="40.0" data-stop="40.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad54 name=ipad data-start="40.5" data-stop="41.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad55 name=ipad data-start="41.0" data-stop="41.5">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad56 name=ipad data-start="41.5" data-stop="42.0">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad57 name=ipad data-start="42.0" data-stop="42.4">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+            <div class="videotip" id=ipad58 name=ipad data-start="42.4" data-stop="42.8">
+              <div class=selectable ></div>
+              <div class="legend"><span>Diesel Ipad</span></div>
+            </div>
+
+
+          </div>
+      </div>
+        <!--
+        <div class="span5 " >
+          <div class=cart data-items="">
+              <span >Tap an item on the video to add to cart.</span>
+          </div>
+        </div>
+        -->
+    </div>
+
+  <div class="row">
+    <div class="span12 columns" id=controls>
+      <input type=button class="btn primary" id=backward value="<<"></input>
+      <input type=button class='btn primary' id=play value="Play"></input>
+      <input type=button class='btn primary' id=pause value="Pause"></input>
+      <input type=button class='btn primary' id=stop value="Stop"></input>
+      <input type=button class="btn primary" id=forward value=">>"></input>
+      <input type=button class='btn primary' id=email value="Send Email"></input>
+      <input type=button class="btn primary" id=post_to_wall value="Post to Wall"></input>
+      <input type=button class="btn primary" id=clear_cart value="Clear Cart"></input>
+      <% if Rails.env == 'development' %>
+          <div id=position>x,y</div>
+          <div id=currenttime>time</div>
+      <% end %>
+    </div>
+  </div>
+
+
+</section>

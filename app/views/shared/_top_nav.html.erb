@@ -1,0 +1,35 @@
+<div class="topbar-wrapper" style="z-index: 5;">
+	<div class="topbar">
+		<div class="fill">
+			<div class="container">
+        <h3><%= link_to "Touchpoint", root_path %></h3>
+        <ul class="nav">
+          <li class="<%= "active" if is_active?(controller, HomeController, 'index') %>"><%= link_to "Home", root_path, :id => "nav-home" %></li>
+        </ul>
+				<div class="popover-wrapper">
+					<%= render :partial => "shared/popover", :locals => {:title => "Library", :text => "Every book ever fucking written. No shit." }%>
+				</div>
+        <form action="">
+          <input type="text" placeholder="Search">
+        </form>
+	      <ul class="nav secondary-nav">
+				<% if current_user %>
+          <li class="menu">
+            <a href="#" class="menu"><%= current_user.email %></a>
+            <ul class="menu-dropdown">
+							<li><%= link_to "Profile", current_user %></li>
+							<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+							<li><%= link_to "Linked Accounts", authentications_path %></li>
+							<li class="divider"></li>
+							<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+						</ul>
+					</li>
+				<% else %>
+					<li><%= link_to "Sign Up", new_user_registration_path, :style => "color:#fc0; font-weight:bold;" %></li>
+					<li><%= link_to "Login", new_user_session_path %></li>
+				<% end %>
+				</ul>
+			</div>
+		</div><!-- /fill -->
+	</div>
+</div>

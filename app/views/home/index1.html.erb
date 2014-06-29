@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Touchpoint</title>
+</head>
+<body>
+<p>image below</p>
+<div class=ipad>
+</div>
+
+<style>
+  xbody {
+  	border: 1px solid blue;
+  	height: 300px;
+  	width: 300px;
+  }
+</style>
+
+<style>
+
+    .ipad {
+        background-image: url(<%= asset_path('apple_box1.png') %>) ;
+        -webkit-background-size: 100% 100%;
+        resize: both;
+        width: 100%;
+        height: 100%;
+        background-size: auto;
+    }
+
+</style>
+
+<% if params[:no_hires]  %>
+    <style>
+
+        #play {
+            color: yellow;
+            font-size: 250%;
+        }
+    </style>
+<% else %>
+    <style>
+        @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+            .ipad {
+                background-image: url(<%= asset_path('apple_box.png') %>);
+            }
+    </style>
+
+<% end %>
+</body>
+</html>
